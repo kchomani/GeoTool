@@ -12,7 +12,10 @@ Unzip the file and double-click `GeoTool.exe`. If Windows says "Windows protecte
 **Run anyway**; the program is free and not code-signed. It needs Windows 10 or 11 (64-bit) and an internet
 connection.
 
-This repository holds only the download page and the program releases.
+Download page: **https://geotool-egeocate.netlify.app/**
+
+This repository holds only the download page and the compiled program releases; the program's source code is not
+published.
 
 Created by **Kaifi Chomani**, University of Raparin, founder of
 [Egeocate Lab for GIS & Remote Sensing](https://egeocate.netlify.app/) — [CV](https://claude.ai/artifact/1pkEazJnxJPDjCm2udXrPu).
