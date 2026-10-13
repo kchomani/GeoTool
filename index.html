@@ -144,6 +144,19 @@
   .steps p { margin: 0; font-size: 15.5px; color: #3b4641; }
   .needs { margin: 26px 0 0; font-size: 15px; color: var(--margin); }
 
+  /* ---- updates: the revision block of a drawing sheet, newest version first ---- */
+  .revisions { width: 100%; border-collapse: collapse; font-size: 15.5px; }
+  .revisions th {
+    text-align: left; font-size: 14px; font-weight: 700; color: var(--margin);
+    padding: 0 22px 8px 0; border-bottom: 1.5px solid var(--ink);
+  }
+  .revisions td { padding: 13px 22px 13px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  .revisions td:first-child { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .revisions td:nth-child(2) { color: var(--margin); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .revisions td:last-child { padding-right: 0; color: #3b4641; }
+  .revisions tbody tr:first-child td:first-child { color: var(--survey); }
+  .revisions .notes { white-space: nowrap; }
+
   /* ---- creator ---- */
   .creator {
     display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px; align-items: center;
@@ -180,6 +193,12 @@
     .download { width: 100%; justify-content: center; font-size: 19px; }
     .examples { grid-template-columns: 1fr; }
     .creator { padding: 22px 18px; }
+    .revisions thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    .revisions tr { display: grid; grid-template-columns: auto 1fr; column-gap: 14px; padding: 13px 0;
+      border-bottom: 1px solid var(--rule); }
+    .revisions tbody tr:first-child { border-top: 1.5px solid var(--ink); }
+    .revisions td { padding: 0; border: 0; }
+    .revisions td:last-child { grid-column: 1 / -1; margin-top: 4px; }
   }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
@@ -208,8 +227,8 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M6.5 10.5 12 16l5.5-5.5"/><path d="M4 20h16"/></svg>
           Download for Windows
         </a>
-        <p class="meta"><span id="relinfo">Version 1.3.0, a 194 MB zip file.</span> Free, no installation and no account.
-          <a href="https://github.com/kchomani/GeoTool/releases">All versions and release notes</a></p>
+        <p class="meta"><span id="relinfo">Version 1.3.0, released 13 October 2026, a 194 MB zip file.</span> Free, no
+          installation and no account. <a href="#updates">All versions and their dates</a></p>
       </div>
       <figure class="shot">
         <img src="assets/geotool-map.jpg" alt="The Geo Tool window: a satellite map of Ranya with drawing tools on the left and the area, drawings and layers panels on the right." width="1227" height="749">
@@ -272,6 +291,27 @@
       <p class="needs">Needs Windows 10 or 11 (64-bit) and an internet connection while it downloads data.</p>
     </section>
 
+    <section aria-labelledby="updates">
+      <h2 id="updates">Updates</h2>
+      <table class="revisions">
+        <thead><tr><th scope="col">Version</th><th scope="col">Date</th><th scope="col">What changed</th></tr></thead>
+        <tbody id="revrows">
+          <tr data-version="1.3.0">
+            <td>1.3.0</td><td><time datetime="2026-10-13">13 October 2026</time></td>
+            <td><span class="summary">Point maps: turn your own list of places (Excel, CSV, KML or GPX) into a finished
+              map with names in English, Kurdish or Arabic. Coordinates in degrees-minutes-seconds and UTM are read
+              too.</span> <a class="notes" href="https://github.com/kchomani/GeoTool/releases/tag/v1.3.0">Release notes</a></td>
+          </tr>
+          <tr data-version="1.2.0">
+            <td>1.2.0</td><td><time datetime="2026-10-11">11 October 2026</time></td>
+            <td><span class="summary">First version on this page: satellite indices, terrain, watersheds, land cover
+              and water, burned areas, fires and earthquakes, buildings and roads, and drawing and measuring on a
+              satellite map.</span> <a class="notes" href="https://github.com/kchomani/GeoTool/releases/tag/v1.2.0">Release notes</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
     <section id="creator" class="creator" aria-labelledby="madeby">
       <div>
         <h2 id="madeby">Created by Kaifi Chomani</h2>
@@ -293,18 +333,77 @@
   </footer>
 </div>
 <script>
-  // Show the newest release's version and size, and link straight to its file (the link above works without this).
-  fetch("https://api.github.com/repos/kchomani/GeoTool/releases/latest")
-    .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
-    .then(function (rel) {
-      var a = (rel.assets || []).filter(function (x) { return x.name === "GeoTool-Windows-x64.zip"; })[0];
-      if (!a) return;
-      document.getElementById("download").href = a.browser_download_url;
-      var v = String(rel.tag_name || "").replace(/^v/, "");
-      document.getElementById("relinfo").textContent =
-        "Version " + v + ", a " + Math.round(a.size / 1e6) + " MB zip file.";
-    })
-    .catch(function () {});
+  // Every published version is listed with its date, newest first, straight from the Releases page, so a new
+  // version appears here (with its date) as soon as it is published. The text written above is shown if this fails.
+  // A release can carry its one-line summary in its notes as <!-- summary: ... --> (hidden on GitHub).
+  (function () {
+    var ZIP = "GeoTool-Windows-x64.zip";
+    function day(iso, opts) {
+      return new Date(iso).toLocaleDateString(opts.locale, {
+        day: opts.short ? "2-digit" : "numeric", month: opts.short ? "2-digit" : "long", year: "numeric",
+        timeZone: "Asia/Baghdad" });
+    }
+    function longDate(iso) { return day(iso, { locale: "en-GB" }); }
+    function isoDate(iso) { return day(iso, { locale: "en-CA", short: true }); }   // 2026-10-13
+    function summaryOf(rel, known) {
+      var m = /<!--\s*summary:\s*([\s\S]*?)-->/i.exec(rel.body || "");
+      return m ? m[1].replace(/\s+/g, " ").trim() : (known || "");
+    }
+    fetch("https://api.github.com/repos/kchomani/GeoTool/releases?per_page=50")
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+      .then(function (list) {
+        var rels = (list || []).filter(function (x) { return !x.draft && !x.prerelease && x.published_at; })
+          .sort(function (a, b) { return b.published_at.localeCompare(a.published_at); });
+        if (!rels.length) return;
+
+        var latest = rels[0];
+        var v0 = String(latest.tag_name || "").replace(/^v/, "");
+        var a = (latest.assets || []).filter(function (x) { return x.name === ZIP; })[0];
+        if (a) {
+          document.getElementById("download").href = a.browser_download_url;
+          document.getElementById("relinfo").textContent = "Version " + v0 + ", released " +
+            longDate(latest.published_at) + ", a " + Math.round(a.size / 1e6) + " MB zip file.";
+        }
+
+        var body = document.getElementById("revrows");
+        var known = {};
+        Array.prototype.forEach.call(body.querySelectorAll("tr[data-version]"), function (tr) {
+          var s = tr.querySelector(".summary");
+          known[tr.getAttribute("data-version")] = s ? s.textContent.replace(/\s+/g, " ").trim() : "";
+        });
+        var rows = document.createDocumentFragment();
+        rels.forEach(function (rel) {
+          var v = String(rel.tag_name || "").replace(/^v/, "");
+          var tr = document.createElement("tr");
+          tr.setAttribute("data-version", v);
+          var c1 = document.createElement("td");
+          c1.textContent = v;
+          var c2 = document.createElement("td");
+          var t = document.createElement("time");
+          t.setAttribute("datetime", isoDate(rel.published_at));
+          t.textContent = longDate(rel.published_at);
+          c2.appendChild(t);
+          var c3 = document.createElement("td");
+          var s = summaryOf(rel, known[v]);
+          if (s) {
+            var sp = document.createElement("span");
+            sp.className = "summary";
+            sp.textContent = s;
+            c3.appendChild(sp);
+            c3.appendChild(document.createTextNode(" "));
+          }
+          var l = document.createElement("a");
+          l.className = "notes";
+          l.href = rel.html_url;
+          l.textContent = "Release notes";
+          c3.appendChild(l);
+          tr.appendChild(c1); tr.appendChild(c2); tr.appendChild(c3);
+          rows.appendChild(tr);
+        });
+        body.replaceChildren(rows);
+      })
+      .catch(function () {});
+  })();
 </script>
 </body>
 </html>
