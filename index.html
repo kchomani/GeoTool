@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Geo Tool — free satellite maps and data for any area</title>
-<meta name="description" content="Geo Tool is a free Windows program for students and researchers: draw or load an area, tick what you need, and get satellite indices, terrain, watersheds, land cover, fires, earthquakes, buildings and roads as maps with coordinates, GeoTIFFs and Shapefiles. Created by Kaifi Chomani.">
+<meta name="description" content="Geo Tool is a free Windows program for students and researchers: draw or load an area, tick what you need, and get satellite indices, band composites, terrain, watersheds, land cover, rainfall, fires, earthquakes, buildings and roads as maps with coordinates, GeoTIFFs and Shapefiles. Created by Kaifi Chomani.">
 <meta property="og:title" content="Geo Tool — free satellite maps and data for any area">
 <meta property="og:description" content="A free Windows program that turns open satellite and map data into ready maps for your study area. No account, no installation.">
 <meta property="og:image" content="https://geotool-egeocate.netlify.app/assets/geotool-map.jpg">
@@ -227,7 +227,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M6.5 10.5 12 16l5.5-5.5"/><path d="M4 20h16"/></svg>
           Download for Windows
         </a>
-        <p class="meta"><span id="relinfo">Version 1.3.0, released 13 October 2026, a 194 MB zip file.</span> Free, no
+        <p class="meta"><span id="relinfo">Version 1.4.0, released 14 October 2026, a 195 MB zip file.</span> Free, no
           installation and no account. <a href="#updates">All versions and their dates</a></p>
       </div>
       <figure class="shot">
@@ -245,6 +245,10 @@
           <span><b>Satellite indices</b><p>NDVI, NDWI, MNDWI, NDBI, SAVI, EVI and NBR from Sentinel-2 (10 m, 2017 to today) or Landsat (30 m, 1984 to today), for one period or every year.</p></span>
         </div>
         <div>
+          <svg viewBox="0 0 46 30" aria-hidden="true"><rect x="2" y="2" width="27" height="16" rx="1.5" fill="#e03131" opacity=".85"/><rect x="9" y="7" width="27" height="16" rx="1.5" fill="#2f9e44" opacity=".8"/><rect x="16" y="12" width="27" height="16" rx="1.5" fill="#1971c2" opacity=".8"/></svg>
+          <span><b>Band composites</b><p>The Sentinel-2 or Landsat bands you choose, listed by number and name, from the clearest image near your date, stacked in your order in one GeoTIFF with a colour map.</p></span>
+        </div>
+        <div>
           <svg viewBox="0 0 46 30" aria-hidden="true" fill="none" stroke="#a0663a" stroke-width="1.6"><path d="M2 24c8-10 16-14 22-10s12 2 20-8"/><path d="M2 28c9-8 17-10 23-7s12 1 19-5"/><path d="M4 18c7-9 13-12 19-9s11 1 17-7"/></svg>
           <span><b>Terrain</b><p>Elevation, slope, aspect and hillshade from the Copernicus, ALOS or NASADEM elevation models (30 m).</p></span>
         </div>
@@ -254,11 +258,15 @@
         </div>
         <div>
           <svg viewBox="0 0 46 30" aria-hidden="true"><rect x="1" y="3" width="21" height="12" fill="#006400"/><rect x="24" y="3" width="21" height="12" fill="#f096ff"/><rect x="1" y="16" width="21" height="11" fill="#fa0000"/><rect x="24" y="16" width="21" height="11" fill="#0064c8"/></svg>
-          <span><b>Land cover and water</b><p>ESA WorldCover and Esri land use maps (10 m), and the JRC history of surface water since 1984.</p></span>
+          <span><b>Land cover and water</b><p>ESA WorldCover (2020 or 2021) and Esri land use maps (10 m, any year from 2017 to 2023), and the JRC history of surface water since 1984.</p></span>
+        </div>
+        <div>
+          <svg viewBox="0 0 46 30" aria-hidden="true"><path d="M2 28.4h42" stroke="#1d2421" stroke-width="1.2"/><rect x="5" y="14" width="4" height="14" fill="#1864ab"/><rect x="11" y="7" width="4" height="21" fill="#1864ab"/><rect x="17" y="17" width="4" height="11" fill="#1864ab"/><rect x="23" y="24" width="4" height="4" fill="#1864ab"/><rect x="29" y="25.5" width="4" height="2.5" fill="#1864ab"/><rect x="35" y="11" width="4" height="17" fill="#1864ab"/></svg>
+          <span><b>Rainfall at a point</b><p>Daily or monthly CHIRPS rainfall since 1981 for any point you type or draw, as CSV tables with monthly and yearly totals and a chart.</p></span>
         </div>
         <div>
           <svg viewBox="0 0 46 30" aria-hidden="true"><circle cx="12" cy="15" r="6" fill="#e03131" stroke="#fff" stroke-width="1.5"/><rect x="25" y="7" width="15" height="15" fill="#f76707" stroke="#5c1a00" stroke-width="1.2"/></svg>
-          <span><b>Fires and earthquakes</b><p>Burned area and severity (dNBR), active fires from NASA FIRMS, past fires from MODIS, and earthquakes from today back to 1900 from USGS and EMSC.</p></span>
+          <span><b>Fires and earthquakes</b><p>Burned area and severity (dNBR, with your own threshold if you wish), active fires from NASA FIRMS, past fires from MODIS, and earthquakes from today back to 1900 from USGS and EMSC.</p></span>
         </div>
         <div>
           <svg viewBox="0 0 46 30" aria-hidden="true"><path d="M1 22 45 9" stroke="#e8590c" stroke-width="3"/><rect x="5" y="4" width="8" height="7" fill="#7b8794"/><rect x="17" y="2" width="6" height="8" fill="#7b8794"/><rect x="28" y="18" width="9" height="7" fill="#7b8794"/><rect x="8" y="23" width="7" height="5" fill="#7b8794"/></svg>
@@ -275,7 +283,9 @@
       </div>
       <div class="examples" aria-label="Example results for Ranya">
         <figure><img src="assets/example-ndvi.jpg" alt="NDVI map of Ranya from Sentinel-2, summer 2024, with coordinates and scale bar." loading="lazy" width="900" height="715"><figcaption>NDVI of Ranya, summer 2024 (Sentinel-2)</figcaption></figure>
+        <figure><img src="assets/example-composite.jpg" alt="Sentinel-2 band composite of Ranya from 14 July 2024 with near infrared shown as red, so fields with crops appear bright red beside the grey town." loading="lazy" width="900" height="710"><figcaption>Band composite of Ranya, 14 July 2024, shown as 8&#8209;4&#8209;3: near infrared as red, so green fields look red (Sentinel-2)</figcaption></figure>
         <figure><img src="assets/example-watershed.jpg" alt="Watershed map with streams by Strahler order and the main channel." loading="lazy" width="900" height="781"><figcaption>A 15.6 km² watershed with Strahler stream orders (Copernicus DEM)</figcaption></figure>
+        <figure><img src="assets/example-rainfall.jpg" alt="Chart of daily rainfall at Ranya in 2024, with the total for each month below it: wet from November to May, dry in summer." loading="lazy" width="900" height="645"><figcaption>Daily rainfall at Ranya in 2024, 817 mm in all (CHIRPS v3.0, Climate Hazards Center, UC Santa Barbara)</figcaption></figure>
         <figure><img src="assets/example-earthquakes.jpg" alt="Map of earthquakes of magnitude 3 or more within 42 km of Ranya, 2015 to 2024." loading="lazy" width="900" height="784"><figcaption>Earthquakes of magnitude 3 or more around Ranya, 2015–2024 (USGS, EMSC)</figcaption></figure>
         <figure><img src="assets/example-pointmap.jpg" alt="Point map of Ranya, Qaladze and Dukan and two wells on a satellite background, with Kurdish names, a legend by type, an inset map, a scale bar and a north arrow." loading="lazy" width="900" height="629"><figcaption>A point map of towns and wells with Kurdish names, made from Points_template.csv. Background: Sentinel-2 cloudless 2025 by EOX IT Services GmbH (contains modified Copernicus Sentinel data 2025)</figcaption></figure>
       </div>
@@ -296,6 +306,12 @@
       <table class="revisions">
         <thead><tr><th scope="col">Version</th><th scope="col">Date</th><th scope="col">What changed</th></tr></thead>
         <tbody id="revrows">
+          <tr data-version="1.4.0">
+            <td>1.4.0</td><td><time datetime="2026-10-14">14 October 2026</time></td>
+            <td><span class="summary">Band composites with the bands you choose (Sentinel-2, Landsat 8–9, Landsat 4–7);
+              CHIRPS rainfall at a point as CSV; land cover year choice; your own dNBR threshold for burned areas;
+              settings that follow your ticks.</span> <a class="notes" href="https://github.com/kchomani/GeoTool/releases/tag/v1.4.0">Release notes</a></td>
+          </tr>
           <tr data-version="1.3.0">
             <td>1.3.0</td><td><time datetime="2026-10-13">13 October 2026</time></td>
             <td><span class="summary">Point maps: turn your own list of places (Excel, CSV, KML or GPX) into a finished
@@ -327,8 +343,9 @@
 
   <footer>
     <p>Free for education and research, provided as is without warranty. Data from Copernicus (European Union and
-      ESA), USGS, NASA, JAXA, EC JRC, ESA WorldCover, Esri and Impact Observatory, EMSC, OpenStreetMap contributors
-      and Overture Maps; every map Geo Tool makes carries the credit its data provider asks for.</p>
+      ESA), USGS, NASA, JAXA, EC JRC, ESA WorldCover, Esri and Impact Observatory, EMSC, the Climate Hazards Center
+      (UC Santa Barbara), OpenStreetMap contributors and Overture Maps; every map Geo Tool makes carries the credit its
+      data provider asks for.</p>
     <p>© 2026 Kaifi Chomani, Egeocate Lab for GIS &amp; Remote Sensing.</p>
   </footer>
 </div>
