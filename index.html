@@ -127,7 +127,8 @@
   .legend p { margin: 2px 0 0; font-size: 15.5px; color: #3b4641; }
   .outputs { margin: 22px 0 0; max-width: 62em; }
 
-  .examples { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 34px; }
+  .examples { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 22px; margin-top: 34px;
+    align-items: start; }
   .examples img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); }
 
   /* ---- three steps (a real sequence) ---- */
@@ -207,7 +208,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M6.5 10.5 12 16l5.5-5.5"/><path d="M4 20h16"/></svg>
           Download for Windows
         </a>
-        <p class="meta"><span id="relinfo">Version 1.2.0, a 188 MB zip file.</span> Free, no installation and no account.
+        <p class="meta"><span id="relinfo">Version 1.3.0, a 194 MB zip file.</span> Free, no installation and no account.
           <a href="https://github.com/kchomani/GeoTool/releases">All versions and release notes</a></p>
       </div>
       <figure class="shot">
@@ -245,18 +246,19 @@
           <span><b>Buildings, roads, rivers and places</b><p>Building footprints, roads, rivers, lakes and points of interest from OpenStreetMap and Overture Maps.</p></span>
         </div>
         <div>
-          <svg viewBox="0 0 46 30" aria-hidden="true" fill="none"><path d="M5 25 9 5l30 4 2 15Z" stroke="#e8590c" stroke-width="1.8" stroke-dasharray="4 3"/><circle cx="5" cy="25" r="2.4" fill="#fff" stroke="#e8590c" stroke-width="1.4"/><circle cx="9" cy="5" r="2.4" fill="#fff" stroke="#e8590c" stroke-width="1.4"/><circle cx="39" cy="9" r="2.4" fill="#fff" stroke="#e8590c" stroke-width="1.4"/><circle cx="41" cy="24" r="2.4" fill="#fff" stroke="#e8590c" stroke-width="1.4"/></svg>
-          <span><b>Drawing and measuring</b><p>Points, lines and polygons with lengths, areas in m², hectares, km² and dunam, distances between points, and coordinates in degrees and UTM.</p></span>
+          <svg viewBox="0 0 46 30" aria-hidden="true"><rect x="1" y="2" width="44" height="26" rx="1.5" fill="#eef3ef" stroke="#c9d3cd"/><circle cx="10" cy="20" r="3.2" fill="#e03131" stroke="#fff" stroke-width="1.2"/><circle cx="22" cy="10" r="3.2" fill="#1971c2" stroke="#fff" stroke-width="1.2"/><circle cx="33" cy="20" r="3.2" fill="#e03131" stroke="#fff" stroke-width="1.2"/><path d="M14.5 20h7M26.5 10h9M37.5 20h5" stroke="#1d2421" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <span><b>Point maps</b><p>Turn your own list of villages, wells or sample sites (Excel, CSV, KML or GPX) into a finished map, with names in English, Kurdish or Arabic on a satellite or white background.</p></span>
         </div>
         <div>
-          <svg viewBox="0 0 46 30" aria-hidden="true" fill="none" stroke="#1d2421" stroke-width="1.4"><rect x="3" y="3" width="40" height="24" rx="1.5"/><path d="M3 9h40" /><path d="M9 20h12M9 15h20" stroke="#1f7a4d" stroke-width="2"/><path d="M36 13v8M33 16l3-3 3 3" /></svg>
-          <span><b>Ready files</b><p>PNG maps with coordinates, scale bar and north arrow (300 to 1000 dpi), GeoTIFF rasters, GeoPackage and Shapefile layers, and CSV tables. Each result is its own file.</p></span>
+          <svg viewBox="0 0 46 30" aria-hidden="true" fill="none"><path d="M5 25 9 5l30 4 2 15Z" stroke="#e8590c" stroke-width="1.8" stroke-dasharray="4 3"/><circle cx="5" cy="25" r="2.4" fill="#fff" stroke="#e8590c" stroke-width="1.4"/><circle cx="9" cy="5" r="2.4" fill="#fff" stroke="#e8590c" stroke-width="1.4"/><circle cx="39" cy="9" r="2.4" fill="#fff" stroke="#e8590c" stroke-width="1.4"/><circle cx="41" cy="24" r="2.4" fill="#fff" stroke="#e8590c" stroke-width="1.4"/></svg>
+          <span><b>Measuring and ready files</b><p>Lengths, areas in m², hectares, km² and dunam, distances and coordinates in degrees and UTM. Every result is its own file: PNG maps with coordinates, scale bar and north arrow, GeoTIFF, GeoPackage, Shapefile and CSV.</p></span>
         </div>
       </div>
       <div class="examples" aria-label="Example results for Ranya">
         <figure><img src="assets/example-ndvi.jpg" alt="NDVI map of Ranya from Sentinel-2, summer 2024, with coordinates and scale bar." loading="lazy" width="900" height="715"><figcaption>NDVI of Ranya, summer 2024 (Sentinel-2)</figcaption></figure>
         <figure><img src="assets/example-watershed.jpg" alt="Watershed map with streams by Strahler order and the main channel." loading="lazy" width="900" height="781"><figcaption>A 15.6 km² watershed with Strahler stream orders (Copernicus DEM)</figcaption></figure>
         <figure><img src="assets/example-earthquakes.jpg" alt="Map of earthquakes of magnitude 3 or more within 42 km of Ranya, 2015 to 2024." loading="lazy" width="900" height="784"><figcaption>Earthquakes of magnitude 3 or more around Ranya, 2015–2024 (USGS, EMSC)</figcaption></figure>
+        <figure><img src="assets/example-pointmap.jpg" alt="Point map of Ranya, Qaladze and Dukan and two wells on a satellite background, with Kurdish names, a legend by type, an inset map, a scale bar and a north arrow." loading="lazy" width="900" height="629"><figcaption>A point map of towns and wells with Kurdish names, made from Points_template.csv. Background: Sentinel-2 cloudless 2025 by EOX IT Services GmbH (contains modified Copernicus Sentinel data 2025)</figcaption></figure>
       </div>
     </section>
 
