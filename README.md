@@ -2,8 +2,9 @@
 
 A free Windows program for students and researchers. Draw or load your study area, tick what you need, and Geo Tool
 downloads open satellite and map data and makes ready-to-use maps with coordinates, GeoTIFFs and Shapefiles:
-satellite indices (NDVI, NDWI and more), terrain, watersheds, land cover, surface water, burned areas, fires,
-earthquakes, buildings, roads, rivers and places. No installation and no account.
+satellite indices (NDVI, NDWI and more), band composites, terrain and contour lines, watersheds, dam lakes (with the
+buildings and roads a lake would cover), land cover, surface water, rainfall, burned areas, fires, earthquakes,
+buildings, roads, rivers and places, and maps of your own points. No installation and no account.
 
 **[Download Geo Tool for Windows](https://github.com/kchomani/GeoTool/releases/latest/download/GeoTool-Windows-x64.zip)**
 (the newest version), or see [all versions](https://github.com/kchomani/GeoTool/releases).

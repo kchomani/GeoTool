@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Geo Tool — free satellite maps and data for any area</title>
-<meta name="description" content="Geo Tool is a free Windows program for students and researchers: draw or load an area, tick what you need, and get satellite indices, band composites, terrain, watersheds, land cover, rainfall, fires, earthquakes, buildings and roads as maps with coordinates, GeoTIFFs and Shapefiles. Created by Kaifi Chomani.">
+<meta name="description" content="Geo Tool is a free Windows program for students and researchers: draw or load an area, tick what you need, and get satellite indices, band composites, terrain and contour lines, watersheds, dam lakes, land cover, rainfall, fires, earthquakes, buildings and roads as maps with coordinates, GeoTIFFs and Shapefiles. Created by Kaifi Chomani.">
 <meta property="og:title" content="Geo Tool — free satellite maps and data for any area">
 <meta property="og:description" content="A free Windows program that turns open satellite and map data into ready maps for your study area. No account, no installation.">
 <meta property="og:image" content="https://geotool-egeocate.netlify.app/assets/geotool-map.jpg">
@@ -130,6 +130,7 @@
   .examples { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 22px; margin-top: 34px;
     align-items: start; }
   .examples img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); }
+  .examples .tall { grid-row: span 2; }    /* the dam window beside the lake map and the dam profile */
 
   /* ---- three steps (a real sequence) ---- */
   .steps { list-style: none; counter-reset: s; padding: 0; margin: 0;
@@ -227,7 +228,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M6.5 10.5 12 16l5.5-5.5"/><path d="M4 20h16"/></svg>
           Download for Windows
         </a>
-        <p class="meta"><span id="relinfo">Version 1.4.0, released 14 October 2026, a 195 MB zip file.</span> Free, no
+        <p class="meta"><span id="relinfo">Version 1.5.0, released 17 October 2026, a 195 MB zip file.</span> Free, no
           installation and no account. <a href="#updates">All versions and their dates</a></p>
       </div>
       <figure class="shot">
@@ -253,8 +254,16 @@
           <span><b>Terrain</b><p>Elevation, slope, aspect and hillshade from the Copernicus, ALOS or NASADEM elevation models (30 m).</p></span>
         </div>
         <div>
+          <svg viewBox="0 0 46 30" aria-hidden="true" fill="none" stroke="#a0663a"><path d="M22 2.5c11 0 21 4.5 21 12S34 27.5 23 27.5 3 22.5 3 15 11 2.5 22 2.5Z" stroke-width="1"/><path d="M22.5 7.5c7.5 0 14 3 14 7.5s-6 8-13.5 8-13-3.5-13-8 5-7.5 12.5-7.5Z" stroke-width="2"/><path d="M23 12c3.5 0 6.5 1.3 6.5 3.2S26.8 18.5 23 18.5s-6.5-1.4-6.5-3.3S19.5 12 23 12Z" stroke-width="1"/></svg>
+          <span><b>Contour lines</b><p>Lines of equal height every 1 to 100 m, or at a step chosen for your area, with labelled index contours, as a map and as a line file.</p></span>
+        </div>
+        <div>
           <svg viewBox="0 0 46 30" aria-hidden="true" fill="none" stroke="#1864ab" stroke-linecap="round"><path d="M23 28V17" stroke-width="2.6"/><path d="M23 17 12 7M23 17l11-11" stroke-width="1.8"/><path d="M12 7 8 2M12 7 16 2M34 6l-3-4M34 6l5-3" stroke-width="1.1"/></svg>
           <span><b>Watersheds</b><p>Click an outlet to get the catchment, streams by Strahler order, the main channel, morphometric parameters, the hypsometric curve and the time of concentration.</p></span>
+        </div>
+        <div>
+          <svg viewBox="0 0 46 30" aria-hidden="true"><defs><clipPath id="damlake"><path d="M1.5 4.5c3 2.5 6 3.5 9 3.6 3.2.1 4.6-2.6 7.6-2 3 .6 3.6 4.3 7.2 5.6 3.4 1.2 6.6-.4 9.7 1.6l1.6 1V25.5c-4.2-.4-7.8-2.3-11.8-2.6-4-.3-6.7 1.2-10.2-.6-3.3-1.7-3-5.4-6.2-7.4C6.3 13.3 2.8 13.8 1.5 12Z"/></clipPath></defs><path d="M1.5 4.5c3 2.5 6 3.5 9 3.6 3.2.1 4.6-2.6 7.6-2 3 .6 3.6 4.3 7.2 5.6 3.4 1.2 6.6-.4 9.7 1.6l1.6 1V25.5c-4.2-.4-7.8-2.3-11.8-2.6-4-.3-6.7 1.2-10.2-.6-3.3-1.7-3-5.4-6.2-7.4C6.3 13.3 2.8 13.8 1.5 12Z" fill="#3b7dd8"/><path d="M3 29 29 4" stroke="#7b8794" stroke-width="1.7"/><path d="M3 29 29 4" stroke="#e01a1a" stroke-width="1.9" clip-path="url(#damlake)"/><path d="M38.5 7v21" stroke="#1d2421" stroke-width="3.4" stroke-linecap="round"/><rect x="8.2" y="10.4" width="4.2" height="4.2" fill="#e01a1a" stroke="#fff" stroke-width=".8"/><rect x="25" y="15.6" width="4.2" height="4.2" fill="#e01a1a" stroke="#fff" stroke-width=".8"/><rect x="33" y="1" width="4.2" height="4.2" fill="#7b8794"/><rect x="41.3" y="22" width="4.2" height="4.2" fill="#7b8794"/></svg>
+          <span><b>Dams and lakes</b><p>Draw a dam across a valley, or click the river and give a height, and see the lake for any water level: its area, volume and depth, the size of the dam and the yearly inflow. Buildings, roads and villages the water would cover are shown in red, so you see what would have to be moved.</p></span>
         </div>
         <div>
           <svg viewBox="0 0 46 30" aria-hidden="true"><rect x="1" y="3" width="21" height="12" fill="#006400"/><rect x="24" y="3" width="21" height="12" fill="#f096ff"/><rect x="1" y="16" width="21" height="11" fill="#fa0000"/><rect x="24" y="16" width="21" height="11" fill="#0064c8"/></svg>
@@ -288,6 +297,9 @@
         <figure><img src="assets/example-rainfall.jpg" alt="Chart of daily rainfall at Ranya in 2024, with the total for each month below it: wet from November to May, dry in summer." loading="lazy" width="900" height="645"><figcaption>Daily rainfall at Ranya in 2024, 817 mm in all (CHIRPS v3.0, Climate Hazards Center, UC Santa Barbara)</figcaption></figure>
         <figure><img src="assets/example-earthquakes.jpg" alt="Map of earthquakes of magnitude 3 or more within 42 km of Ranya, 2015 to 2024." loading="lazy" width="900" height="784"><figcaption>Earthquakes of magnitude 3 or more around Ranya, 2015–2024 (USGS, EMSC)</figcaption></figure>
         <figure><img src="assets/example-pointmap.jpg" alt="Point map of Ranya, Qaladze and Dukan and two wells on a satellite background, with Kurdish names, a legend by type, an inset map, a scale bar and a north arrow." loading="lazy" width="900" height="629"><figcaption>A point map of towns and wells with Kurdish names, made from Points_template.csv. Background: Sentinel-2 cloudless 2025 by EOX IT Services GmbH (contains modified Copernicus Sentinel data 2025)</figcaption></figure>
+        <figure class="tall"><img src="assets/example-dam-window.jpg" alt="The Dam and lake window: a small lake behind a dam line on a stream, two buildings inside the lake shown in red, other buildings in white and roads in yellow, with the lake area, volume, depth, dam size and what goes under water listed below." loading="lazy" width="540" height="700"><figcaption>The Dam and lake window: a 15 m dam line drawn automatically on a stream north-west of Ranya. Water can rise 10.3 m before it would flow around the end of the dam; the lake then holds 46,666 m³, and the two buildings in red would have to be moved. Background: Sentinel-2 cloudless 2025 by EOX IT Services GmbH (contains modified Copernicus Sentinel data 2025); buildings from Overture Maps; roads © OpenStreetMap contributors</figcaption></figure>
+        <figure><img src="assets/example-dam-map.jpg" alt="Saved lake map: water depth in blue behind the dam, contour lines, buildings under water in red and other buildings and roads around the lake, on a satellite image." loading="lazy" width="900" height="621"><figcaption>The saved lake map, with water depth, contour lines and everything that would go under water (Copernicus DEM)</figcaption></figure>
+        <figure><img src="assets/example-dam-profile.jpg" alt="Cross-section along the dam line: the ground, the earth dam 11.5 m high and 210 m long, its top and the water level." loading="lazy" width="900" height="413"><figcaption>The ground along the dam line and the earth dam it needs: 11.5 m high and 210 m long</figcaption></figure>
       </div>
     </section>
 
@@ -306,6 +318,12 @@
       <table class="revisions">
         <thead><tr><th scope="col">Version</th><th scope="col">Date</th><th scope="col">What changed</th></tr></thead>
         <tbody id="revrows">
+          <tr data-version="1.5.0">
+            <td>1.5.0</td><td><time datetime="2026-10-17">17 October 2026</time></td>
+            <td><span class="summary">Dam and lake: draw a dam across a valley (or click the river and give a height)
+              and see the lake for any water level, its area and volume, and in red the buildings, roads and villages
+              that would go under water; contour lines.</span> <a class="notes" href="https://github.com/kchomani/GeoTool/releases/tag/v1.5.0">Release notes</a></td>
+          </tr>
           <tr data-version="1.4.0">
             <td>1.4.0</td><td><time datetime="2026-10-14">14 October 2026</time></td>
             <td><span class="summary">Band composites with the bands you choose (Sentinel-2, Landsat 8–9, Landsat 4–7);
