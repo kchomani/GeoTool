@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Geo Tool — free satellite maps and data for any area</title>
-<meta name="description" content="Geo Tool is a free Windows program for students and researchers: draw or load an area, tick what you need, and get satellite indices, band composites, terrain and contour lines, watersheds, dam lakes, land cover, rainfall, fires, earthquakes, buildings and roads as maps with coordinates, GeoTIFFs and Shapefiles. Created by Kaifi Chomani.">
+<meta name="description" content="Geo Tool is a free Windows program for students and researchers: draw or load an area, tick what you need, and get satellite indices, band composites, terrain and contour lines, watersheds, dam lakes, hazard maps, land cover, rainfall, fires, earthquakes, buildings and roads as maps with coordinates, GeoTIFFs and Shapefiles. Created by Kaifi Chomani.">
 <meta property="og:title" content="Geo Tool — free satellite maps and data for any area">
 <meta property="og:description" content="A free Windows program that turns open satellite and map data into ready maps for your study area. No account, no installation.">
 <meta property="og:image" content="https://geotool-egeocate.netlify.app/assets/geotool-map.jpg">
@@ -228,7 +228,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M6.5 10.5 12 16l5.5-5.5"/><path d="M4 20h16"/></svg>
           Download for Windows
         </a>
-        <p class="meta"><span id="relinfo">Version 1.5.0, released 17 October 2026, a 195 MB zip file.</span> Free, no
+        <p class="meta"><span id="relinfo">Version 1.6.0, released 25 October 2026, a 196 MB zip file.</span> Free, no
           installation and no account. <a href="#updates">All versions and their dates</a></p>
       </div>
       <figure class="shot">
@@ -266,6 +266,10 @@
           <span><b>Dams and lakes</b><p>Draw a dam across a valley, or click the river and give a height, and see the lake for any water level: its area, volume and depth, the size of the dam and the yearly inflow. Buildings, roads and villages the water would cover are shown in red, so you see what would have to be moved.</p></span>
         </div>
         <div>
+          <svg viewBox="0 0 46 30" aria-hidden="true"><rect x="1" y="3" width="8.4" height="24" fill="#1a9850"/><rect x="9.8" y="3" width="8.4" height="24" fill="#91cf60"/><rect x="18.6" y="3" width="8.4" height="24" fill="#fee08b"/><rect x="27.4" y="3" width="8.4" height="24" fill="#fc8d59"/><rect x="36.2" y="3" width="8.4" height="24" fill="#d73027"/></svg>
+          <span><b>Hazard maps</b><p>Flood, landslide, wildfire, earthquake, drought, land degradation and heat hazard of any area in five classes, from very low to very high. The default factors and weights come from Kaifi Chomani's published studies, with their DOI links; tick other factors and set your own weights, and the map follows at once.</p></span>
+        </div>
+        <div>
           <svg viewBox="0 0 46 30" aria-hidden="true"><rect x="1" y="3" width="21" height="12" fill="#006400"/><rect x="24" y="3" width="21" height="12" fill="#f096ff"/><rect x="1" y="16" width="21" height="11" fill="#fa0000"/><rect x="24" y="16" width="21" height="11" fill="#0064c8"/></svg>
           <span><b>Land cover and water</b><p>ESA WorldCover (2020 or 2021) and Esri land use maps (10 m, any year from 2017 to 2023), and the JRC history of surface water since 1984.</p></span>
         </div>
@@ -300,6 +304,8 @@
         <figure class="tall"><img src="assets/example-dam-window.jpg" alt="The Dam and lake window: a small lake behind a dam line on a stream, two buildings inside the lake shown in red, other buildings in white and roads in yellow, with the lake area, volume, depth, dam size and what goes under water listed below." loading="lazy" width="540" height="700"><figcaption>The Dam and lake window: a 15 m dam line drawn automatically on a stream north-west of Ranya. Water can rise 10.3 m before it would flow around the end of the dam; the lake then holds 46,666 m³, and the two buildings in red would have to be moved. Background: Sentinel-2 cloudless 2025 by EOX IT Services GmbH (contains modified Copernicus Sentinel data 2025); buildings from Overture Maps; roads © OpenStreetMap contributors</figcaption></figure>
         <figure><img src="assets/example-dam-map.jpg" alt="Saved lake map: water depth in blue behind the dam, contour lines, buildings under water in red and other buildings and roads around the lake, on a satellite image." loading="lazy" width="900" height="621"><figcaption>The saved lake map, with water depth, contour lines and everything that would go under water (Copernicus DEM)</figcaption></figure>
         <figure><img src="assets/example-dam-profile.jpg" alt="Cross-section along the dam line: the ground, the earth dam 11.5 m high and 210 m long, its top and the water level." loading="lazy" width="900" height="413"><figcaption>The ground along the dam line and the earth dam it needs: 11.5 m high and 210 m long</figcaption></figure>
+        <figure><img src="assets/example-hazard-window.jpg" alt="The Hazard map window: flood susceptibility of the Ranya region in five classes from very low (green) to very high (red) with Dukan lake in blue, the factors and their weights on the left and Kaifi Chomani's studies with DOI links on the right." loading="lazy" width="900" height="540"><figcaption>The Hazard map window: flood susceptibility around Ranya with the factors and weights of Kaifi Chomani's flood study, which you can change, and his studies with their DOI links</figcaption></figure>
+        <figure><img src="assets/example-hazard-flood.jpg" alt="Saved flood susceptibility map of the Ranya region over the relief: the low Ranya plain in the high and very high classes, the mountain ridges very low, Dukan lake in blue, with the area of each class and the factors and weights." loading="lazy" width="900" height="647"><figcaption>The saved flood map: 598 km² at 30 m, with the area of each class (Copernicus DEM, ESA WorldCover, Sentinel-2, CHIRPS rainfall, OpenStreetMap roads)</figcaption></figure>
       </div>
     </section>
 
@@ -318,6 +324,12 @@
       <table class="revisions">
         <thead><tr><th scope="col">Version</th><th scope="col">Date</th><th scope="col">What changed</th></tr></thead>
         <tbody id="revrows">
+          <tr data-version="1.6.0">
+            <td>1.6.0</td><td><time datetime="2026-10-25">25 October 2026</time></td>
+            <td><span class="summary">Hazard maps: flood, landslide, wildfire, earthquake, drought, land degradation and
+              heat hazard of any area in 5 classes from open data, with factors and weights you can change (defaults
+              from Kaifi Chomani's published studies, with their DOI links).</span> <a class="notes" href="https://github.com/kchomani/GeoTool/releases/tag/v1.6.0">Release notes</a></td>
+          </tr>
           <tr data-version="1.5.0">
             <td>1.5.0</td><td><time datetime="2026-10-17">17 October 2026</time></td>
             <td><span class="summary">Dam and lake: draw a dam across a valley (or click the river and give a height)
