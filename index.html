@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Geo Tool — free satellite maps and data for any area</title>
-<meta name="description" content="Geo Tool is a free Windows program for students and researchers: draw or load an area, tick what you need, and get satellite indices, band composites, terrain and contour lines, watersheds, dam lakes, hazard maps, land cover, rainfall, fires, earthquakes, buildings and roads as maps with coordinates, GeoTIFFs and Shapefiles. Created by Kaifi Chomani.">
+<meta name="description" content="Geo Tool is a free Windows program for students and researchers: draw or load an area, tick what you need, and get satellite indices, band composites, terrain and contour lines, elevation profiles, watersheds, runoff, dam lakes, hazard maps, land cover, rainfall, fires, earthquakes, buildings and roads as maps with coordinates, GeoTIFFs and Shapefiles. Created by Kaifi Chomani.">
 <meta property="og:title" content="Geo Tool — free satellite maps and data for any area">
 <meta property="og:description" content="A free Windows program that turns open satellite and map data into ready maps for your study area. No account, no installation.">
 <meta property="og:image" content="https://geotool-egeocate.netlify.app/assets/geotool-map.jpg">
@@ -228,7 +228,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M6.5 10.5 12 16l5.5-5.5"/><path d="M4 20h16"/></svg>
           Download for Windows
         </a>
-        <p class="meta"><span id="relinfo">Version 1.6.0, released 25 October 2026, a 196 MB zip file.</span> Free, no
+        <p class="meta"><span id="relinfo">Version 1.7.0, released 2 November 2026, a 197 MB zip file.</span> Free, no
           installation and no account. <a href="#updates">All versions and their dates</a></p>
       </div>
       <figure class="shot">
@@ -260,6 +260,14 @@
         <div>
           <svg viewBox="0 0 46 30" aria-hidden="true" fill="none" stroke="#1864ab" stroke-linecap="round"><path d="M23 28V17" stroke-width="2.6"/><path d="M23 17 12 7M23 17l11-11" stroke-width="1.8"/><path d="M12 7 8 2M12 7 16 2M34 6l-3-4M34 6l5-3" stroke-width="1.1"/></svg>
           <span><b>Watersheds</b><p>Click an outlet to get the catchment, streams by Strahler order, the main channel, morphometric parameters, the hypsometric curve and the time of concentration.</p></span>
+        </div>
+        <div>
+          <svg viewBox="0 0 46 30" aria-hidden="true"><path d="M2 27V20c6-2 8-11 14-12 5-1 7 7 12 6s8-9 16-10v23Z" fill="#e8d8bd"/><path d="M2 20c6-2 8-11 14-12 5-1 7 7 12 6s8-9 16-10" fill="none" stroke="#5c3d1e" stroke-width="1.8"/><path d="M2 28.4h42" stroke="#1d2421" stroke-width="1.2"/></svg>
+          <span><b>Elevation profiles</b><p>Draw a line, or put points, and get the ground along it: the profile chart and, every 30 m or at the distance you choose, the station, distance, elevation, coordinates and slope of each point, in Excel and on a map. The Copernicus, ALOS and NASADEM elevation models can be compared on one chart.</p></span>
+        </div>
+        <div>
+          <svg viewBox="0 0 46 30" aria-hidden="true"><rect x="13" y="1" width="3" height="5" fill="#74c0fc"/><rect x="17" y="1" width="3" height="9" fill="#1c7ed6"/><rect x="21" y="1" width="3" height="4" fill="#74c0fc"/><path d="M2 28c8 0 11-1 15-8 3-6 5-8 8-4 4 6 9 10 19 11" fill="none" stroke="#1864ab" stroke-width="2"/><path d="M2 28.4h42" stroke="#1d2421" stroke-width="1.2"/></svg>
+          <span><b>Runoff at an outlet</b><p>The peak flow and runoff volume of the catchment above an outlet for storms of 2 to 100 years, by the Rational and SCS curve number methods. Type your own data, or let Geo Tool take the catchment, land cover, soil groups and rainfall from open data; the Excel file shows every step.</p></span>
         </div>
         <div>
           <svg viewBox="0 0 46 30" aria-hidden="true"><defs><clipPath id="damlake"><path d="M1.5 4.5c3 2.5 6 3.5 9 3.6 3.2.1 4.6-2.6 7.6-2 3 .6 3.6 4.3 7.2 5.6 3.4 1.2 6.6-.4 9.7 1.6l1.6 1V25.5c-4.2-.4-7.8-2.3-11.8-2.6-4-.3-6.7 1.2-10.2-.6-3.3-1.7-3-5.4-6.2-7.4C6.3 13.3 2.8 13.8 1.5 12Z"/></clipPath></defs><path d="M1.5 4.5c3 2.5 6 3.5 9 3.6 3.2.1 4.6-2.6 7.6-2 3 .6 3.6 4.3 7.2 5.6 3.4 1.2 6.6-.4 9.7 1.6l1.6 1V25.5c-4.2-.4-7.8-2.3-11.8-2.6-4-.3-6.7 1.2-10.2-.6-3.3-1.7-3-5.4-6.2-7.4C6.3 13.3 2.8 13.8 1.5 12Z" fill="#3b7dd8"/><path d="M3 29 29 4" stroke="#7b8794" stroke-width="1.7"/><path d="M3 29 29 4" stroke="#e01a1a" stroke-width="1.9" clip-path="url(#damlake)"/><path d="M38.5 7v21" stroke="#1d2421" stroke-width="3.4" stroke-linecap="round"/><rect x="8.2" y="10.4" width="4.2" height="4.2" fill="#e01a1a" stroke="#fff" stroke-width=".8"/><rect x="25" y="15.6" width="4.2" height="4.2" fill="#e01a1a" stroke="#fff" stroke-width=".8"/><rect x="33" y="1" width="4.2" height="4.2" fill="#7b8794"/><rect x="41.3" y="22" width="4.2" height="4.2" fill="#7b8794"/></svg>
@@ -306,6 +314,8 @@
         <figure><img src="assets/example-dam-profile.jpg" alt="Cross-section along the dam line: the ground, the earth dam 11.5 m high and 210 m long, its top and the water level." loading="lazy" width="900" height="413"><figcaption>The ground along the dam line and the earth dam it needs: 11.5 m high and 210 m long</figcaption></figure>
         <figure><img src="assets/example-hazard-window.jpg" alt="The Hazard map window: flood susceptibility of the Ranya region in five classes from very low (green) to very high (red) with Dukan lake in blue, the factors and their weights on the left and Kaifi Chomani's studies with DOI links on the right." loading="lazy" width="900" height="540"><figcaption>The Hazard map window: flood susceptibility around Ranya with the factors and weights of Kaifi Chomani's flood study, which you can change, and his studies with their DOI links</figcaption></figure>
         <figure><img src="assets/example-hazard-flood.jpg" alt="Saved flood susceptibility map of the Ranya region over the relief: the low Ranya plain in the high and very high classes, the mountain ridges very low, Dukan lake in blue, with the area of each class and the factors and weights." loading="lazy" width="900" height="647"><figcaption>The saved flood map: 598 km² at 30 m, with the area of each class (Copernicus DEM, ESA WorldCover, Sentinel-2, CHIRPS rainfall, OpenStreetMap roads)</figcaption></figure>
+        <figure><img src="assets/example-profile.jpg" alt="Elevation profile from Ranya to the hills north-east of the town: flat ground near 600 m for 4 km, a steep ridge up to 1,098 m, then a plain near 650 m, with the Copernicus, ALOS and NASADEM elevation models drawn on top of each other." loading="lazy" width="900" height="529"><figcaption>Elevation profile from Ranya to the hills: 10.4 km with a point every 30 m, from 584 m up to 1,098 m, with the three elevation models compared (Copernicus, ALOS and NASADEM agree within about 3 m)</figcaption></figure>
+        <figure><img src="assets/example-runoff-window.jpg" alt="The Runoff at an outlet window: the inputs on the left, each from the DEM, land cover, soil or ERA5 rainfall unless typed; on the right a chart of peak flows for 2 to 100 years by the Rational and SCS-CN methods, and a table of the design rain, intensity, C and peak flows." loading="lazy" width="900" height="577"><figcaption>The Runoff window for a 15.6 km² stream above Ranya, from open data only: the 100-year peak flow is 153 m³/s by the SCS-CN method and 113 m³/s by the Rational method (ERA5 rainfall 1951–2026, ESA WorldCover, SoilGrids)</figcaption></figure>
       </div>
     </section>
 
@@ -324,6 +334,12 @@
       <table class="revisions">
         <thead><tr><th scope="col">Version</th><th scope="col">Date</th><th scope="col">What changed</th></tr></thead>
         <tbody id="revrows">
+          <tr data-version="1.7.0">
+            <td>1.7.0</td><td><time datetime="2026-11-02">2 November 2026</time></td>
+            <td><span class="summary">Elevation profile along a line or at points (chart, stations, coordinates,
+              slopes, Excel and map), and the runoff of any outlet by the Rational and SCS-CN methods for 2 to 100
+              years, from your own data or free open data.</span> <a class="notes" href="https://github.com/kchomani/GeoTool/releases/tag/v1.7.0">Release notes</a></td>
+          </tr>
           <tr data-version="1.6.0">
             <td>1.6.0</td><td><time datetime="2026-10-25">25 October 2026</time></td>
             <td><span class="summary">Hazard maps: flood, landslide, wildfire, earthquake, drought, land degradation and
@@ -374,8 +390,9 @@
   <footer>
     <p>Free for education and research, provided as is without warranty. Data from Copernicus (European Union and
       ESA), USGS, NASA, JAXA, EC JRC, ESA WorldCover, Esri and Impact Observatory, EMSC, the Climate Hazards Center
-      (UC Santa Barbara), OpenStreetMap contributors and Overture Maps; every map Geo Tool makes carries the credit its
-      data provider asks for.</p>
+      (UC Santa Barbara), ISRIC (SoilGrids), the Copernicus Climate Change Service and ECMWF (ERA5, through
+      Open-Meteo), OpenStreetMap contributors and Overture Maps; every map Geo Tool makes carries the credit its data
+      provider asks for.</p>
     <p>© 2026 Kaifi Chomani, Egeocate Lab for GIS &amp; Remote Sensing.</p>
   </footer>
 </div>
