@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Geo Tool privacy policy</title>
+<meta name="description" content="Privacy policy of Geo Tool, the free Windows program by Kaifi Chomani: no account, no tracking, no personal data collected.">
+<link rel="icon" type="image/png" href="assets/favicon-64.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #ffffff;
+    --ink: #1d2421;
+    --survey: #1f7a4d;
+    --survey-dark: #17603c;
+    --margin: #5c6a63;
+    --rule: #dfe5e1;
+  }
+  * { box-sizing: border-box; }
+  html, body { background: var(--paper); }
+  body {
+    margin: 0;
+    color: var(--ink);
+    font-family: "Archivo", "Segoe UI", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 44rem; margin: 0 auto; padding: 3rem 16px 4rem; }
+  a { color: var(--survey); text-underline-offset: 3px; }
+  a:hover { color: var(--survey-dark); }
+  :focus-visible { outline: 3px solid #1864ab; outline-offset: 3px; }
+  .back { font-size: 0.95rem; }
+  h1 { font-size: 2.1rem; line-height: 1.15; margin: 1.2rem 0 0.4rem; font-variation-settings: "wdth" 88; }
+  .date { color: var(--margin); margin: 0 0 2rem; }
+  h2 { font-size: 1.2rem; margin: 2.2rem 0 0.5rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+  ul { padding-left: 1.2rem; }
+  li { margin: 0.3rem 0; }
+  footer { color: var(--margin); font-size: 0.9rem; margin-top: 3rem; }
+</style>
+</head>
+<body>
+<main>
+  <p class="back"><a href="./">Geo Tool home</a></p>
+  <h1>Privacy policy</h1>
+  <p class="date">Geo Tool for Windows, including the Microsoft Store version. Last updated 8 November 2026.</p>
+
+  <p>Geo Tool is a free program made by Kaifi Chomani (Egeocate Lab for GIS &amp; Remote Sensing). It has no account
+    or sign-in, shows no advertising, and does not track you. Geo Tool itself does not collect, store or send
+    any personal information to its author.</p>
+
+  <h2>What Geo Tool sends over the internet</h2>
+  <p>To make a map, Geo Tool downloads free open data for the area or point you choose. To do that it sends the
+    coordinates of your area or point, the dates you pick and the program's name and version to the public services
+    that hold the data:</p>
+  <ul>
+    <li>Microsoft Planetary Computer: satellite images (Sentinel-2, Landsat, MODIS), elevation models and land cover</li>
+    <li>Esri and EOX: the satellite background map and place names</li>
+    <li>OpenStreetMap (Overpass servers) and Overture Maps: buildings, roads, places and water</li>
+    <li>Open-Meteo (ERA5 rainfall), ISRIC SoilGrids (soil), the Climate Hazards Center at UC Santa Barbara (CHIRPS rainfall)</li>
+    <li>NASA FIRMS (active fires), earthquake catalogues, and GitHub (the active-fault database)</li>
+  </ul>
+  <p>As with any web request, these services also see your computer's internet (IP) address. Each one handles
+    that under its own privacy policy. Geo Tool sends nothing else: not your name, files, drawings or results.</p>
+
+  <h2>What stays on your computer</h2>
+  <ul>
+    <li>Maps, tables, GeoTIFFs and Shapefiles are saved in the folder you choose (the Desktop unless you pick another).</li>
+    <li>Downloaded map tiles and data are kept in a working folder on your computer, so they are not downloaded
+      again. Uninstalling the Microsoft Store version removes them; with the zip version, delete the folder
+      %LOCALAPPDATA%\GeoTool.</li>
+    <li>Files you open in Geo Tool (areas, points, spreadsheets) are read on your computer and are not uploaded.</li>
+  </ul>
+
+  <h2>Children</h2>
+  <p>Geo Tool is an educational program and collects no personal information from anyone, including children.</p>
+
+  <h2>Changes and contact</h2>
+  <p>If this policy changes, the new version will be posted on this page with a new date. For questions, contact
+    Kaifi Chomani through <a href="https://egeocate.netlify.app/">Egeocate Lab for GIS &amp; Remote Sensing</a>.</p>
+
+  <footer>© 2026 Kaifi Chomani, Egeocate Lab for GIS &amp; Remote Sensing.</footer>
+</main>
+</body>
+</html>
